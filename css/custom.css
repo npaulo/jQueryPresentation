@@ -1,0 +1,138 @@
+.intro-logos img, 
+.intro-jquery-logo img {
+	margin: 0 !important;
+}
+
+.intro-logos, 
+.intro-jquery-logo {
+	position: absolute;
+}
+
+.intro-logos {
+    height: 150px;
+    left: 570px;
+    top: 24px;
+}
+
+.intro-jquery-logo {
+    height: 80px;
+    left: 510px;
+    top: 169px;
+}
+
+.reveal .dom-js-logo {
+    position: absolute;
+    height: 190px;
+    top: 247px;
+    right: 150px;
+}
+
+.reveal .search-dom-js-logo {
+    right: 33px;
+    position: absolute;
+    top: -34px;
+}
+
+.reveal .search-dom-js-logo img {
+    height: 150px;
+}
+
+input, button {
+	font-size: 0.8em;
+}
+
+.text-align-right {
+	text-align: right;
+}
+
+.form-horizontal > * {
+	vertical-align: bottom;
+	font-size: 0.8em;
+}
+
+.form-horizontal > :nth-child(1) {
+	padding: 0 10px 10px 0;
+	text-align: right;
+}
+
+.form-horizontal > :nth-child(2) {
+	padding: 0 0 10px 10px;
+}
+
+#mirror-result {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+.hide {
+	display: none;
+}
+
+.reveal pre code {
+    padding: 5px !important;
+    border-radius: 5px;
+}
+
+.thumbnail {
+    display: block;
+    padding: 4px;
+    line-height: 1.42857143;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.blue1 {
+	background-color: #1B222D;
+}
+
+.blue2 {
+	background-color: #182127;
+}
+
+
+/* Common styles for all types */
+.reveal .bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  position: relative;
+}
+.reveal .bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.reveal .bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.reveal .bs-callout code {
+  border-radius: 3px;
+}
+
+/* Tighten up space between multiple callouts */
+.reveal .bs-callout + .reveal .bs-callout {
+  margin-top: -5px;
+}
+
+/* Variations */
+.reveal .bs-callout-danger {
+  border-left-color: #ce4844;
+}
+.reveal .bs-callout-danger h4 {
+  color: #ce4844;
+}
+.reveal .bs-callout-warning {
+  border-left-color: #aa6708;
+}
+.reveal .bs-callout-warning h4 {
+  color: #aa6708;
+}
+.reveal .bs-callout-info {
+  border-left-color: #1b809e;
+  background: rgba(27, 128, 158, 0.2);
+}
+.reveal .bs-callout-info h4 {
+  color: #1b809e;
+}

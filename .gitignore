@@ -68,3 +68,4 @@ log/*.log
 tmp/**
 node_modules/
 .sass-cache
+.ipynb_checkpoints/

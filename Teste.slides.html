@@ -1,0 +1,656 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<title>Teste slides</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- General and theme style sheets -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/codepen-embed.min.css">
+<link rel="stylesheet" href="./reveal.js/css/reveal.css">
+<link rel="stylesheet" href="./reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="css/custom.css">
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+}
+</script>
+
+<!--[if lt IE 9]>
+<script src="./reveal.js/lib/js/html5shiv.js"></script>
+<![endif]-->
+
+<!-- Loading the mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration -->
+
+<!-- Get Font-awesome from cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
+
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+.reveal {
+  font-size: 160%;
+  overflow-y: scroll;
+}
+.reveal pre {
+  width: inherit;
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace, sans-serif;
+  font-size: 80%;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+.reveal pre code {
+  padding: 0px;
+}
+.reveal section img {
+  border: 0px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+}
+.reveal i {
+  font-style: normal;
+  font-family: FontAwesome;
+  font-size: 2em;
+}
+.reveal .slides {
+  text-align: left;
+}
+.reveal.fade {
+  opacity: 1;
+}
+.reveal .progress {
+  position: static;
+}
+div.input_area {
+  padding: 0.06em;
+}
+div.code_cell {
+  background-color: transparent;
+}
+div.prompt {
+  width: 11ex;
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace, sans-serif;
+  font-size: 80%;
+  text-align: right;
+}
+div.output_area pre {
+  font-family: monospace, sans-serif;
+  font-size: 80%;
+}
+div.output_prompt {
+  /* 5px right shift to account for margin in parent container */
+  margin: 5px 5px 0 0;
+}
+div.text_cell.rendered .rendered_html {
+  /* The H1 height seems miscalculated, we are just hidding the scrollbar */
+  overflow-y: hidden;
+}
+a.anchor-link {
+  /* There is still an anchor, we are only hidding it */
+  display: none;
+}
+.rendered_html p {
+  text-align: inherit;
+}
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="reveal">
+<div class="slides">
+<section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="DOM-&amp;-jQuery">DOM &amp; jQuery<a class="anchor-link" href="#DOM-&amp;-jQuery">&#194;&#182;</a></h1><div class="intro-jquery-logo">
+    <img src="imgs/JQuery_logo.svg" />
+</div>
+<div class="intro-logos">
+    <img src="imgs/html-css-js-logos.png" />
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<video controls>
+  <source src="videos/jQuery.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DOM---Document-Object-Model">DOM - Document Object Model<a class="anchor-link" href="#DOM---Document-Object-Model">&#194;&#182;</a></h2><p>A tree-like structure created by browsers so we can quickly find HTML Elements using JavaScript.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><ul>
+<li><strong>DOM Selection</strong></li>
+<li><strong>DOM Manipulation</strong></li>
+<li><strong>Special Effects</strong></li>
+<li><strong>Events</strong></li>
+<li><strong>Ajax</strong></li>
+<li><strong>Cross-browser support</strong></li>
+</ul>
+</blockquote>
+<div class="dom-js-logo">
+    <img src="imgs/js-logo.pnh.png"/>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-does-that-DOM-structure-look-like?">What does that DOM structure look like?<a class="anchor-link" href="#What-does-that-DOM-structure-look-like?">&#194;&#182;</a></h2><div class="row">
+    <div class="col-md-5">
+        The HTML
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-5">
+        The DOM
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5">
+        <div class="thumbnail blue1"><img src= "imgs/DOM_tree_HTML.png"/></div>
+        <div class="bs-callout bs-callout-info">
+            <p>Inside the DOM, HTML elements become “nodes” which have relationships with one another.</p>
+        </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-5">
+        <div class="thumbnail blue2"><img src= "imgs/DOM_tree.png"/></div>
+    </div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="How-do-we-search-through-the-DOM?">How do we search through the DOM?<a class="anchor-link" href="#How-do-we-search-through-the-DOM?">&#194;&#182;</a></h2><div class="bs-callout bs-callout-info">
+    <p>JavaScript gives developers a language to interact with the DOM.</p>
+    <div class="search-dom-js-logo"><img src="imgs/js-logo.pnh.png"></div>
+</div><div class="row">
+    <div class="col-md-5">
+        <div class="thumbnail blue1"><img src= "imgs/DOM_tree_HTML.png"/></div>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-5">
+<pre>Examples:<code class="javascript">// Get page title
+> $("title").text()
+< "jQuery Adventures"
+
+// Get children of "body"
+> $("body").children()
+< [h1, p]
+
+</code></pre>
+    </div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="TRY-IT-YOURSELF">TRY IT YOURSELF<a class="anchor-link" href="#TRY-IT-YOURSELF">&#194;&#182;</a></h2><div class="row form-horizontal">
+    <div class="col-md-4">
+        Message:
+    </div>
+    <div class="col-md-8">
+        <input type="text" id="mirror-msg"/> <button id="mirror">Reverse</button>
+    </div>
+</div>
+<div class="row form-horizontal">
+    <div class="col-md-4">
+        Reversed:
+    </div>
+    <div class="col-md-8">
+        <span id="mirror-result" class="hide"></span>
+    </div>
+</div><script>
+function reverse(s){
+    return s.split("").reverse().join("");
+}
+$(function(){
+    $("#mirror").click(function(){
+        $("#mirror-result").text(reverse($("#mirror-msg").val())).removeClass("hide");
+    });
+});
+</script>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="jQuery-voodoo!!!">jQuery voodoo!!!<a class="anchor-link" href="#jQuery-voodoo!!!">&#194;&#182;</a></h2><p><a href="#" class="disapear" style="cursor:help">If you click on me, I will disappear.</a><br>
+<a href="#" class="disapear" style="cursor:help">Click me away!</a><br>
+<a href="#" class="disapear" style="cursor:help">Click me too!</a><br></p>
+<script>
+$(function(){
+    $(".disapear").click(function(e){
+        e.preventDefault();
+        $(this)
+          .animate({"font-size": "3em"}, 250)
+          .slideUp();
+    });
+});
+</script>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Get-Started">Get Started<a class="anchor-link" href="#Get-Started">&#194;&#182;</a></h2><p><a href="http://jquery.com/download/">http://jquery.com/download/</a></p>
+<ul>
+<li><p>Downloading jQuery file:</p>
+<ul>
+<li>Development version</li>
+<li>Production version<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;jquery-3.2.1.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</li>
+</ul>
+</li>
+<li><p>Include it from a CDN (Content Delivery Network), Google, Microsoft, CDNjs, others...</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Basic-Syntax">Basic Syntax<a class="anchor-link" href="#Basic-Syntax">&#194;&#182;</a></h2><pre><code class="javascript">$("selector").action()</code></pre><ul>
+<li>A <strong>$</strong> sign to define/access jQuery</li>
+<li>A <strong>(selector)</strong> to "query (or find)" HTML elements</li>
+<li>A jQuery <strong>action()</strong> to be performed on the element(s)
+<br></li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Examples:">Examples:<a class="anchor-link" href="#Examples:">&#194;&#182;</a></h3><pre>- Hides the current element:<code class="javascript">$(this).hide()</code></pre><pre>- Hides all &lt;p&gt; elements:<code class="javascript">$("p").hide()</code></pre><pre>- Hides all elements with <b>class="test"</b>:<code class="javascript">$(".test").hide()</code></pre>
+<pre>- Hides the element with <b>id="test"</b>:<code class="javascript">$("#test").hide()</code></pre>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-Document-Ready-Event">The Document Ready Event<a class="anchor-link" href="#The-Document-Ready-Event">&#194;&#182;</a></h2><p>This is to prevent any jQuery code from running before the document is finished loading (is ready).</p>
+<pre>
+<b>Long form:</b>
+<code class="javascript">$(document).ready(function(){
+   // jQuery methods go here...
+});
+</code></pre><pre>
+<b>Short form:</b>
+<code class="javascript">$(function(){
+   // jQuery methods go here...
+});
+</code></pre>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Basic-Selectors">Basic Selectors<a class="anchor-link" href="#Basic-Selectors">&#194;&#182;</a></h2><table>
+<thead><tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><pre><code class="javascript">$("*")</code></pre></td>
+<td>Select all elements.</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$(".class-name")</code></pre></td>
+<td>Selects all elements with the given css class.</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$("span")</code></pre></td>
+<td>Selects all elements with the given tag name.</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$("#id")</code></pre></td>
+<td>Selects a single element with the given id attribute.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Selects the combined results of all the specified selectors.</p>
+<pre><code class="javascript">$("selector1, selector2, selectorN")</code></pre>
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><p data-height="409" data-theme-id="0" data-slug-hash="wqaWab" data-default-tab="html,result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Selectors" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/wqaWab/">jQuery Selectors</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hierarchy-Selectors">Hierarchy Selectors<a class="anchor-link" href="#Hierarchy-Selectors">&#194;&#182;</a></h2><table>
+<thead><tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><pre><code class="javascript">$(".content > b")</code></pre></td>
+<td>Selects all direct child elements specified by “b” (child) of elements specified by “.content” (parent).</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$("ul label")</code></pre></td>
+<td>Selects all elements that are descendants of a given ancestor.</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$("ul[data-list=first] + b")</code></pre></td>
+<td>Selects all next elements matching “b” (next) that are immediately preceded by a sibling “ul[data-list=first]” (prev).</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$("ul[data-list=first] ~ ul")</code></pre></td>
+<td>Selects all sibling elements that follow after the “ul[data-list=first]” (prev) element, have the same parent, and match the filtering “ul” (siblings) selector.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="More-Selectors">More Selectors<a class="anchor-link" href="#More-Selectors">&#194;&#182;</a></h2><table>
+<thead><tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><pre><code class="javascript">$(this)</code></pre></td>
+<td>Selects the current HTML element</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$("b.intro")</code></pre></td>
+<td>Selects all <code>&lt;b&gt;</code> elements with class="intro"</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$("b:first")</code></pre></td>
+<td>Selects the first <code>&lt;b&gt;</code> element</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$("ul li:first")</code></pre></td>
+<td>Selects the first <code>&lt;li&gt;</code> element of the first <code>&lt;ul&gt;</code></td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$("ul li:first-child")</code></pre></td>
+<td>Selects the first <code>&lt;li&gt;</code> element of every <code>&lt;ul&gt;</code></td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$("[data-list]")</code></pre></td>
+<td>Selects all elements with an <code>data-list</code> attribute</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$(":hidden")</code></pre></td>
+<td>Selects all elements that are hidden</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="More-Selectors">More Selectors<a class="anchor-link" href="#More-Selectors">&#194;&#182;</a></h2><table>
+<thead><tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><pre><code class="javascript">$("ul[data-list='first']")</code></pre></td>
+<td>Selects all <code>&lt;ul&gt;</code> elements with a target attribute value equal to "first"</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$("ul[data-list!='first']")</code></pre></td>
+<td>Selects all <code>&lt;ul&gt;</code> elements with a target attribute value NOT equal to "first"</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$(":button")</code></pre></td>
+<td>Selects all <code>&lt;button&gt;</code> elements and <code>&lt;input&gt;</code> elements of type="button"</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$("li:even")</code></pre></td>
+<td>Selects all even <code>&lt;li&gt;</code> elements</td>
+</tr>
+<tr>
+<td><pre><code class="javascript">$("li:odd")</code></pre></td>
+<td>Selects all odd <code>&lt;li&gt;</code> elements</td>
+</tr>
+</tbody>
+</table>
+<p>For more details <a href="http://api.jquery.com/category/selectors/" target="_blank">http://api.jquery.com/category/selectors/</a></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Actions---Content-and-Attributes">Actions - Content and Attributes<a class="anchor-link" href="#Actions---Content-and-Attributes">&#194;&#182;</a></h2><p><div class="bs-callout bs-callout-info">
+Three simple, but useful, jQuery methods for DOM manipulation are:
+</div></p>
+<ul>
+<li><strong>text()</strong> - Sets or returns the text content of selected elements</li>
+<li><strong>html()</strong> - Sets or returns the content of selected elements (including HTML markup)</li>
+<li><strong>val()</strong> - Sets or returns the value of form fields</li>
+<li><strong>attr()</strong> - sets or returns the attribute value</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Actions---text()-and-html()">Actions - text() and html()<a class="anchor-link" href="#Actions---text()-and-html()">&#194;&#182;</a></h2><p><p data-height="312" data-theme-id="0" data-slug-hash="gxaZaV" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Actions - text() and html()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/gxaZaV/">jQuery Actions - text() and html()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script><p><a href="http://api.jquery.com/text/" target="_blank">http://api.jquery.com/text/</a><br>
+<a href="http://api.jquery.com/html/" target="_blank">http://api.jquery.com/html/</a></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Actions---val()">Actions - val()<a class="anchor-link" href="#Actions---val()">&#194;&#182;</a></h2><p><p data-height="265" data-theme-id="0" data-slug-hash="NvGeyb" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Actions - val()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/NvGeyb/">jQuery Actions - val()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script><p><a href="http://api.jquery.com/val/" target="_blank">http://api.jquery.com/val/</a></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Actions---attr()">Actions - attr()<a class="anchor-link" href="#Actions---attr()">&#194;&#182;</a></h2><p><p data-height="211" data-theme-id="0" data-slug-hash="zdveOy" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Actions - attr()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/zdveOy/">jQuery Actions - attr()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script><p><a href="http://api.jquery.com/attr/" target="_blank">http://api.jquery.com/attr/</a></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="imgs/dom-and-jquery.png" alt="DOM &amp; jQuery"></p>
+
+</div>
+</div>
+</div></section></section>
+</div>
+</div>
+
+<script>
+
+require(
+    {
+      // it makes sense to wait a little bit when you are loading
+      // reveal from a cdn in a slow connection environment
+      waitSeconds: 15
+    },
+    [
+      "./reveal.js/lib/js/head.min.js",
+      "./reveal.js/js/reveal.js"
+    ],
+
+    function(head, Reveal){
+
+        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: "./reveal.js/lib/js/classList.js",
+                  condition: function() { return !document.body.classList; } },
+                { src: "./reveal.js/plugin/notes/notes.js",
+                  async: true,
+                  condition: function() { return !!document.body.classList; } },
+                { src: './reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
+
+        var update = function(event){
+          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
+            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
+          }
+        };
+
+        Reveal.addEventListener('slidechanged', update);
+
+        var update_scroll = function(event){
+          $(".reveal").scrollTop(0);
+        };
+
+        Reveal.addEventListener('slidechanged', update_scroll);
+
+    }
+);
+</script>
+
+</body>
+
+
+</html>
