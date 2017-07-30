@@ -69,3 +69,4 @@ tmp/**
 node_modules/
 .sass-cache
 .ipynb_checkpoints/
+codeschool_try_jquery*
