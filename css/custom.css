@@ -1,3 +1,9 @@
+.questions-img {
+    position: absolute;
+    top: 70px;
+    left: 380px;
+}
+
 .intro-logos img, 
 .intro-jquery-logo img {
 	margin: 0 !important;

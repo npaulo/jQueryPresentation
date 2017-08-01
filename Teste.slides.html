@@ -210,7 +210,9 @@ a.anchor-link {
 </div>
 <div class="row">
     <div class="col-md-5">
-        <div class="thumbnail blue1"><img src= "imgs/DOM_tree_HTML.png"/></div>
+    <p data-height="285" data-theme-id="0" data-slug-hash="yoexPM" data-default-tab="html" data-user="npaulo" data-embed-version="2" data-pen-title="DOM and jQuery " class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/yoexPM/">DOM and jQuery </a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
         <div class="bs-callout bs-callout-info">
             <p>Inside the DOM, HTML elements become “nodes” which have relationships with one another.</p>
         </div>
@@ -233,7 +235,8 @@ a.anchor-link {
     <div class="search-dom-js-logo"><img src="imgs/js-logo.pnh.png"></div>
 </div><div class="row">
     <div class="col-md-5">
-        <div class="thumbnail blue1"><img src= "imgs/DOM_tree_HTML.png"/></div>
+        <p data-height="285" data-theme-id="0" data-slug-hash="yoexPM" data-default-tab="html" data-user="npaulo" data-embed-version="2" data-pen-title="DOM and jQuery " class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/yoexPM/">DOM and jQuery </a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
     </div>
     <div class="col-md-2">
     </div>
@@ -331,29 +334,6 @@ $(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Basic-Syntax">Basic Syntax<a class="anchor-link" href="#Basic-Syntax">&#194;&#182;</a></h2><pre><code class="javascript">$("selector").action()</code></pre><ul>
-<li>A <strong>$</strong> sign to define/access jQuery</li>
-<li>A <strong>(selector)</strong> to "query (or find)" HTML elements</li>
-<li>A jQuery <strong>action()</strong> to be performed on the element(s)
-<br></li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Examples:">Examples:<a class="anchor-link" href="#Examples:">&#194;&#182;</a></h3><pre>- Hides the current element:<code class="javascript">$(this).hide()</code></pre><pre>- Hides all &lt;p&gt; elements:<code class="javascript">$("p").hide()</code></pre><pre>- Hides all elements with <b>class="test"</b>:<code class="javascript">$(".test").hide()</code></pre>
-<pre>- Hides the element with <b>id="test"</b>:<code class="javascript">$("#test").hide()</code></pre>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-Document-Ready-Event">The Document Ready Event<a class="anchor-link" href="#The-Document-Ready-Event">&#194;&#182;</a></h2><p>This is to prevent any jQuery code from running before the document is finished loading (is ready).</p>
 <pre>
 <b>Long form:</b>
@@ -366,6 +346,20 @@ $(function(){
    // jQuery methods go here...
 });
 </code></pre>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Basic-Syntax">Basic Syntax<a class="anchor-link" href="#Basic-Syntax">&#194;&#182;</a></h2><pre><code class="javascript">$("selector").action()</code></pre><ul>
+<li>A <strong>$</strong> sign to define/access jQuery</li>
+<li>A <strong>(selector)</strong> to "query (or find)" HTML elements</li>
+<li>A jQuery <strong>action()</strong> to be performed on the element(s)
+<br></li>
+</ul>
+
 </div>
 </div>
 </div></section></section><section><section>
@@ -419,7 +413,7 @@ $(function(){
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -452,7 +446,7 @@ $(function(){
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -540,24 +534,32 @@ $(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Actions---Content-and-Attributes">Actions - Content and Attributes<a class="anchor-link" href="#Actions---Content-and-Attributes">&#194;&#182;</a></h2><p><div class="bs-callout bs-callout-info">
-Three simple, but useful, jQuery methods for DOM manipulation are:
+<h2 id="HTML-Content-and-Attributes">HTML Content and Attributes<a class="anchor-link" href="#HTML-Content-and-Attributes">&#194;&#182;</a></h2><p><div class="bs-callout bs-callout-info">
+Four simple, but useful, jQuery methods for DOM manipulation are:
 </div></p>
 <ul>
-<li><strong>text()</strong> - Sets or returns the text content of selected elements</li>
-<li><strong>html()</strong> - Sets or returns the content of selected elements (including HTML markup)</li>
-<li><strong>val()</strong> - Sets or returns the value of form fields</li>
-<li><strong>attr()</strong> - sets or returns the attribute value</li>
+<li><strong>.text()</strong> - Gets or Sets the text content of selected elements</li>
+<li><strong>.html()</strong> - Gets or Sets the content of selected elements (including HTML markup)</li>
+<li><strong>.val()</strong> - Gets or Sets the value of form fields</li>
+<li><strong>.attr()</strong> - Gets or Sets the attribute value</li>
 </ul>
 
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Actions---text()-and-html()">Actions - text() and html()<a class="anchor-link" href="#Actions---text()-and-html()">&#194;&#182;</a></h2><p><p data-height="312" data-theme-id="0" data-slug-hash="gxaZaV" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Actions - text() and html()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/gxaZaV/">jQuery Actions - text() and html()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<pre><b>Get value:</b><code class="javascript">console.log("Text: " + $("#test").text());</code></pre><pre><b>Set value:</b><code class="javascript">$("#test").text("Set this text!!!");</code></pre>
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id=".text()-and-.html()">.text() and .html()<a class="anchor-link" href="#.text()-and-.html()">&#194;&#182;</a></h2><p><p data-height="312" data-theme-id="0" data-slug-hash="gxaZaV" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Actions - text() and html()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/gxaZaV/">jQuery Actions - text() and html()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script><p><a href="http://api.jquery.com/text/" target="_blank">http://api.jquery.com/text/</a><br>
 <a href="http://api.jquery.com/html/" target="_blank">http://api.jquery.com/html/</a></p>
 
@@ -568,7 +570,7 @@ Three simple, but useful, jQuery methods for DOM manipulation are:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Actions---val()">Actions - val()<a class="anchor-link" href="#Actions---val()">&#194;&#182;</a></h2><p><p data-height="265" data-theme-id="0" data-slug-hash="NvGeyb" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Actions - val()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/NvGeyb/">jQuery Actions - val()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<h2 id=".val()">.val()<a class="anchor-link" href="#.val()">&#194;&#182;</a></h2><p><p data-height="265" data-theme-id="0" data-slug-hash="NvGeyb" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Actions - val()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/NvGeyb/">jQuery Actions - val()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script><p><a href="http://api.jquery.com/val/" target="_blank">http://api.jquery.com/val/</a></p>
 
 </div>
@@ -578,9 +580,92 @@ Three simple, but useful, jQuery methods for DOM manipulation are:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Actions---attr()">Actions - attr()<a class="anchor-link" href="#Actions---attr()">&#194;&#182;</a></h2><p><p data-height="211" data-theme-id="0" data-slug-hash="zdveOy" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Actions - attr()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/zdveOy/">jQuery Actions - attr()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<h2 id=".attr()">.attr()<a class="anchor-link" href="#.attr()">&#194;&#182;</a></h2><p><p data-height="280" data-theme-id="0" data-slug-hash="zdveOy" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Actions - attr()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/zdveOy/">jQuery Actions - attr()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script><p><a href="http://api.jquery.com/attr/" target="_blank">http://api.jquery.com/attr/</a></p>
 
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Add-New-HTML-Content">Add New HTML Content<a class="anchor-link" href="#Add-New-HTML-Content">&#194;&#182;</a></h2><div class="bs-callout bs-callout-info">
+We will look at four jQuery methods that are used to add new content:
+</div><ul>
+<li><strong>.append()</strong> - Inserts content at the end of the selected elements</li>
+<li><strong>.prepend()</strong> - Inserts content at the beginning of the selected elements</li>
+<li><strong>.after()</strong> - Inserts content after the selected elements</li>
+<li><strong>.before()</strong> - Inserts content before the selected elements</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id=".append()-VS-.prepend()">.append() VS .prepend()<a class="anchor-link" href="#.append()-VS-.prepend()">&#194;&#182;</a></h2><p><p data-height="438" data-theme-id="0" data-slug-hash="JyGBNb" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Actions - append() vs prepend()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/JyGBNb/">jQuery Actions - append() vs prepend()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id=".after()-VS-.before()">.after() VS .before()<a class="anchor-link" href="#.after()-VS-.before()">&#194;&#182;</a></h2><p><p data-height="357" data-theme-id="0" data-slug-hash="qXbyJX" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Actions - .after() VS .before()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/qXbyJX/">jQuery Actions - .after() VS .before()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Remove-Elements/Content">Remove Elements/Content<a class="anchor-link" href="#Remove-Elements/Content">&#194;&#182;</a></h2><div class="bs-callout bs-callout-info">
+To remove elements and content, there are mainly two jQuery methods:
+</div><ul>
+<li><strong>.remove()</strong> - Removes the selected element (and its child elements)</li>
+<li><strong>.empty()</strong> - Removes the child elements from the selected element</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id=".remove()-VS-.empty()">.remove() VS .empty()<a class="anchor-link" href="#.remove()-VS-.empty()">&#194;&#182;</a></h2><p><p data-height="406" data-theme-id="0" data-slug-hash="NvxLxW" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Actions - .remove() VS .empty()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/NvxLxW/">jQuery Actions - .remove() VS .empty()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Manipulating-CSS">Manipulating CSS<a class="anchor-link" href="#Manipulating-CSS">&#194;&#182;</a></h2><div class="bs-callout bs-callout-info">
+jQuery has several methods for CSS manipulation. We will look at the following methods:
+</div><ul>
+<li><strong>.addClass()</strong> - Adds one or more classes to the selected elements</li>
+<li><strong>.removeClass()</strong> - Removes one or more classes from the selected elements</li>
+<li><strong>.toggleClass()</strong> - Toggles between adding/removing classes from the selected elements</li>
+<li><strong>.hasClass()</strong> - Determine whether any of the matched elements are assigned the given class</li>
+<li><strong>.css()</strong> - Sets or returns the style attribute</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Manipulating-CSS">Manipulating CSS<a class="anchor-link" href="#Manipulating-CSS">&#194;&#182;</a></h2><p><p data-height="451" data-theme-id="0" data-slug-hash="OjNNqj" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery .css()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/OjNNqj/">jQuery .css()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 </div>
 </div>
 </div></section></section><section><section>
@@ -588,8 +673,133 @@ Three simple, but useful, jQuery methods for DOM manipulation are:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="imgs/dom-and-jquery.png" alt="DOM &amp; jQuery"></p>
+<h2 id="Events">Events<a class="anchor-link" href="#Events">&#194;&#182;</a></h2><p>Examples:</p>
+<ul>
+<li>moving a mouse over an element</li>
+<li>selecting a radio button</li>
+<li>clicking on an element
+<br><br></li>
+</ul>
+<table>
+<thead><tr>
+<th>Mouse Events</th>
+<th>Keyboard Events</th>
+<th>Form Events</th>
+<th>Document/Window Events</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>click</td>
+<td>keypress</td>
+<td>submit</td>
+<td>load</td>
+</tr>
+<tr>
+<td>dblclick</td>
+<td>keydown</td>
+<td>change</td>
+<td>resize</td>
+</tr>
+<tr>
+<td>mouseenter</td>
+<td>keyup</td>
+<td>focus</td>
+<td>scroll</td>
+</tr>
+<tr>
+<td>mouseleave</td>
+<td></td>
+<td>blur</td>
+<td>unload</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://api.jquery.com/category/events/" target="_blank">https://api.jquery.com/category/events/</a></p>
 
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Event-Methods">Event Methods<a class="anchor-link" href="#Event-Methods">&#194;&#182;</a></h2><p><em>Specific event methods</em></p>
+<ul>
+<li><strong>.click( handler )</strong> - Bind an event handler to the "click" JavaScript event;</li>
+<li><strong>.click()</strong> - Trigger "click" on an element;</li>
+<li><strong>.blur( handler ), .blur(), .change( handler ), .change(), ...</strong></li>
+</ul>
+<p><p data-height="249" data-theme-id="0" data-slug-hash="eEJyVe" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Events" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/eEJyVe/">jQuery Events</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Events-other-syntax">Events other syntax<a class="anchor-link" href="#Events-other-syntax">&#194;&#182;</a></h2><p><em>The other syntax</em></p>
+<ul>
+<li><strong>.on()</strong> - Attach an event handler function for one or more events to the selected elements;</li>
+<li><strong>.off()</strong> - Remove an event handler;</li>
+<li><strong>.trigger( eventType )</strong> - Execute all handlers attached to the matched elements for the given event type.</li>
+</ul>
+<p><p data-height="317" data-theme-id="0" data-slug-hash="KvVZzz" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Events - click() VS on()" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/KvVZzz/">jQuery Events - click() VS on()</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="AJAX---Asynchronous-JavaScript-and-XML">AJAX - Asynchronous JavaScript and XML<a class="anchor-link" href="#AJAX---Asynchronous-JavaScript-and-XML">&#194;&#182;</a></h2><div class="bs-callout bs-callout-info">
+    AJAX is about loading data in the background and display it on the webpage, without reloading the whole page.
+</div><ul>
+<li><strong>.load()</strong> - The method loads data from a server and puts the returned data into the selected element;</li>
+<li><strong>.get()</strong> - Requests data from a specified resource;</li>
+<li><strong>.post()</strong> - Submits data to be processed to a specified resource;</li>
+<li><strong>.ajax()</strong> - Generic ajax request;</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="AJAX-Example">AJAX Example<a class="anchor-link" href="#AJAX-Example">&#194;&#182;</a></h2><p><p data-height="339" data-theme-id="0" data-slug-hash="xLZaBy" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Ajax" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/xLZaBy/">jQuery Ajax</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Basic-Effects">Basic Effects<a class="anchor-link" href="#Basic-Effects">&#194;&#182;</a></h2><p><p data-height="345" data-theme-id="0" data-slug-hash="PKNXer" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Effects" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/PKNXer/">jQuery Effects</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Animations">Animations<a class="anchor-link" href="#Animations">&#194;&#182;</a></h2><p><p data-height="311" data-theme-id="0" data-slug-hash="jLqdgx" data-default-tab="result" data-user="npaulo" data-embed-version="2" data-pen-title="jQuery Animations" class="codepen">See the Pen <a href="https://codepen.io/npaulo/pen/jLqdgx/">jQuery Animations</a> by Nuno Correia (<a href="https://codepen.io/npaulo">@npaulo</a>) on <a href="https://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Questions?">Questions?<a class="anchor-link" href="#Questions?">&#194;&#182;</a></h1><div class="questions-img">
+    <img src="imgs/dom-and-jquery.png"/>
+</div>
 </div>
 </div>
 </div></section></section>
