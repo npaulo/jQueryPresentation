@@ -44,7 +44,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>{{resources['metadata']['name']}} slides</title>
+<title>DOM and jQuery</title>
 
 <script src="{{resources.reveal.require_js_url}}"></script>
 <script src="{{resources.reveal.jquery_url}}"></script>
@@ -56,6 +56,7 @@
 <link rel="stylesheet" href="{{resources.reveal.url_prefix}}/css/reveal.css">
 <link rel="stylesheet" href="{{resources.reveal.url_prefix}}/css/theme/{{resources.reveal.theme}}.css" id="theme">
 <link rel="stylesheet" href="css/custom.css">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -157,6 +158,11 @@ a.anchor-link {
 {% block body %}
 {% block pre_slides %}
 <body>
+<div class="chuck-table">
+    <div class="chuck-cell">
+        <img id="chuck" src="/imgs/chuck_unicorn.png">
+    </div>
+</div>
 {% endblock pre_slides %}
 
 <div class="reveal">

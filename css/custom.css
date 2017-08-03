@@ -1,3 +1,25 @@
+
+.chuck-cell {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.chuck-table {
+    height: 100%;
+    width: 100%;
+    display:none;
+}
+
+.chuck-table img {
+  display: none;
+  opacity: 0;
+  width: 1px;
+  height: 1px; 
+}
+
 .questions-img {
     position: absolute;
     top: 70px;

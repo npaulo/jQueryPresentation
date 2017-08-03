@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>Teste slides</title>
+<title>DOM and jQuery</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="./reveal.js/css/reveal.css">
 <link rel="stylesheet" href="./reveal.js/css/theme/solarized.css" id="theme">
 <link rel="stylesheet" href="css/custom.css">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -139,6 +140,11 @@ a.anchor-link {
 
 
 <body>
+<div class="chuck-table">
+    <div class="chuck-cell">
+        <img id="chuck" src="/imgs/chuck_unicorn.png">
+    </div>
+</div>
 
 
 <div class="reveal">
@@ -291,9 +297,11 @@ $(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="jQuery-voodoo!!!">jQuery voodoo!!!<a class="anchor-link" href="#jQuery-voodoo!!!">&#194;&#182;</a></h2><p><a href="#" class="disapear" style="cursor:help">If you click on me, I will disappear.</a><br>
+<h2 id="jQuery-voodoo!!!">jQuery voodoo!!!<a class="anchor-link" href="#jQuery-voodoo!!!">&#194;&#182;</a></h2><p><div id="jquery-voodoo">
+<a href="#" class="disapear" style="cursor:help">If you click on me, I will disappear.</a><br>
 <a href="#" class="disapear" style="cursor:help">Click me away!</a><br>
-<a href="#" class="disapear" style="cursor:help">Click me too!</a><br></p>
+<a href="#" class="disapear" style="cursor:help">Click me too!</a><br>
+</div></p>
 <script>
 $(function(){
     $(".disapear").click(function(e){
@@ -301,6 +309,30 @@ $(function(){
         $(this)
           .animate({"font-size": "3em"}, 250)
           .slideUp();
+
+        var anchors = $("#jquery-voodoo a:visible");
+        if (anchors.length == 1) {
+            var height = $("body").height();
+            $(".chuck-table").css("display", "table");
+            $("#chuck")
+                .show()
+                .animate({
+                    opacity: 1,
+                    width: height + "px",
+                    height: height + "px",
+                }, function() {
+                   $("#chuck").click(function(){
+                       var width = $("body").width();
+                       $(this).animate({
+                            opacity: 0,
+                            width: width + "px",
+                            height: width + "px",
+                       }, function(){
+                           $(".chuck-table").remove();
+                       });
+                   }); 
+                });
+        }
     });
 });
 </script>
@@ -797,7 +829,12 @@ jQuery has several methods for CSS manipulation. We will look at the following m
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Questions?">Questions?<a class="anchor-link" href="#Questions?">&#194;&#182;</a></h1><div class="questions-img">
+<h1 id="Questions?">Questions?<a class="anchor-link" href="#Questions?">&#194;&#182;</a></h1><ul>
+<li><a href="http://api.jquery.com">jQuery API</a></li>
+<li><a href="http://youmightnotneedjquery.com/">You might not need jQuery</a></li>
+<li><a href="https://codepen.io/collection/nkLJGQ/">Presentation Examples</a></li>
+</ul>
+<div class="questions-img">
     <img src="imgs/dom-and-jquery.png"/>
 </div>
 </div>
